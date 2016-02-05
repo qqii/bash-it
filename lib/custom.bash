@@ -1,33 +1,3 @@
-# Colors
-export Black='\e[0;30m'        # Black
-export Red='\e[0;31m'          # Red
-export Green='\e[0;32m'        # Green
-export Yellow='\e[0;33m'       # Yellow
-export Blue='\e[0;34m'         # Blue
-export Purple='\e[0;35m'       # Purple
-export Cyan='\e[0;36m'         # Cyan
-export White='\e[0;37m'        # White
-# Bold
-export BBlack='\e[1;30m'       # Black
-export BRed='\e[1;31m'         # Red
-export BGreen='\e[1;32m'       # Green
-export BYellow='\e[1;33m'      # Yellow
-export BBlue='\e[1;34m'        # Blue
-export BPurple='\e[1;35m'      # Purple
-export BCyan='\e[1;36m'        # Cyan
-export BWhite='\e[1;37m'       # White
-# Background
-export On_Black='\e[40m'       # Black
-export On_Red='\e[41m'         # Red
-export On_Green='\e[42m'       # Green
-export On_Yellow='\e[43m'      # Yellow
-export On_Blue='\e[44m'        # Blue
-export On_Purple='\e[45m'      # Purple
-export On_Cyan='\e[46m'        # Cyan
-export On_White='\e[47m'       # White
-export NC="\e[m"               # Color Reset
-export ALERT=${BWhite}${On_Red} # Bold White on red background
-
 ulimit -S -c 0
 set -o notify
 set -o ignoreeof
@@ -52,7 +22,7 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 export TIMEFORMAT=$'real %3R\tuser %3U\tsys %3S\tpcpu %P'
-export HISTTIMEFORMAT="$(echo -e ${BCyan})[%D %I:%M:%S%p]$(echo -e ${NC}) "
+export HISTTIMEFORMAT="$(echo -e ${BCyan})[%D %I:%M:%S %p]$(echo -e ${NC}) "
 export HISTCONTROL=ignoreboth:erasedups
 export PYTHONSTARTUP='/home/qqii/.pystart.py'
 
@@ -137,16 +107,16 @@ function my_ip() { # Get IP adress on ethernet.
     echo ${MY_IP:-"Not connected"}
 }
 function ii() {	# Get current host related info.
-    echo -e "\nYou are logged on ${BRed}$HOST"
-    echo -e "\n${BRed}Additionnal information:$NC " ; uname -a
-    echo -e "\n${BRed}Users logged on:$NC " ; w -hs |
+    echo -e "\nYou are logged on ${bold_red}$HOST"
+    echo -e "\n${bold_red}Additionnal information:$normal " ; uname -a
+    echo -e "\n${bold_red}Users logged on:$normal " ; w -hs |
              cut -d " " -f1 | sort | uniq
-    echo -e "\n${BRed}Current date :$NC " ; date
-    echo -e "\n${BRed}Machine stats :$NC " ; uptime
-    echo -e "\n${BRed}Memory stats :$NC " ; free
-    echo -e "\n${BRed}Diskspace :$NC " ; mydf / $HOME
-    echo -e "\n${BRed}Local IP Address :$NC" ; my_ip
-    echo -e "\n${BRed}Open connections :$NC "; netstat -pan --inet;
+    echo -e "\n${bold_red}Current date :$normal " ; date
+    echo -e "\n${bold_red}Machine stats :$normal " ; uptime
+    echo -e "\n${bold_red}Memory stats :$normal " ; free
+    echo -e "\n${bold_red}Diskspace :$normal " ; mydf / $HOME
+    echo -e "\n${bold_red}Local IP Address :$normal" ; my_ip
+    echo -e "\n${bold_red}Open connections :$normal "; netstat -pan --inet;
     echo
 }
 function repeat() {      # Repeat n times command.
