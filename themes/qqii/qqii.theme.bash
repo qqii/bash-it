@@ -8,8 +8,8 @@ SCM_SVN_CHAR="${cyan}⑆${normal}"
 SCM_HG_CHAR="${bold_red}☿${normal}"
 
 load() {
-    grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage}'
-    #top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9\.]*\).id.*/\1/" | awk '{print 100 - $1}'
+    # TODO: find a better way, this command takes too long!
+    top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9\.]*\).id.*/\1/" | awk '{print 100 - $1}'
 }
 
 getreturn_prompt() {
@@ -17,7 +17,7 @@ getreturn_prompt() {
 }
 
 gettime_prompt() {
-    SYSLOAD="$(load)"
+    SYSLOAD=$(load)
     TIME="$(date +%I:%M:%S)"
     TIME1="$(date +%p)"
     
