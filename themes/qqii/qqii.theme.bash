@@ -8,7 +8,7 @@ SCM_SVN_CHAR="${cyan}⑆${normal}"
 SCM_HG_CHAR="${bold_red}☿${normal}"
 
 load() {
-    top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1}'
+    top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9\.]*\).id.*/\1/" | awk '{print 100 - $1}'
 }
 
 getreturn_prompt() {
