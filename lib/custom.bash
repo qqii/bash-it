@@ -1,3 +1,5 @@
+TERM=xterm-256color
+
 ulimit -S -c 0
 set -o notify
 set -o ignoreeof
