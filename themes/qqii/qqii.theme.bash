@@ -36,7 +36,7 @@ gettime_prompt() {
 gethost_prompt() {
     if [[ ${USER} == "root" ]]; then
         HOST_PROMPT=${bold_red}${background_white}
-    elif [[ ${USER} != $(logname) ]]; then
+    elif [[ ${USER} != $LOGNAME ]]; then
         HOST_PROMPT=${bold_red}
     else
         HOST_PROMPT=${cyan}

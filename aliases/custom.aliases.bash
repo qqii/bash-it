@@ -33,11 +33,11 @@ function cdls() {
 	cd $1
 	ls ${@:2}
 }
-alias cd='cdls'
+#alias cd='cdls'
 alias cwd='pwd'
 alias sublime='subl'
 alias term='pantheon-terminal'
 alias terminal='pantheon-terminal'
 alias files='nohup pantheon-files &'
 alias calculator='pantheon-calculator &'
-alias chrome='google-chrome'
+#alias chrome='google-chrome'
