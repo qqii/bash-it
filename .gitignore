@@ -1,3 +1,4 @@
+.atom-build.json
 */enabled/*
 .DS_Store
 custom/*
@@ -5,3 +6,5 @@ custom/*
 .rvmrc
 *.swp
 .*.un~
+bats
+.idea
